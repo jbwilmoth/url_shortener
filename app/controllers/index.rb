@@ -3,8 +3,8 @@ get '/' do
   erb :index
 end
 
-get '/:original_url' do
-end
+# get '/:original_url' do
+# end
 
 get '/:short_url' do
   # redirect to appropriate "long" URL
@@ -18,6 +18,7 @@ end
 # end
 
 post '/urls' do
+  binding.pry
   short_url = ("a".."z").to_a.sample(4).join("")
   @new_url = Url.create(original_url: params[:original_url], short_url: short_url)
   # binding.pry
