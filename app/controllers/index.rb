@@ -5,7 +5,9 @@ end
 
 post '/urls' do
   # create a new Url
+  url[:short_url] =
   Url.create(params[:url])
+  erb :index
 end
 
 # e.g., /q6bda
