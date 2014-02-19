@@ -5,7 +5,13 @@ end
 
 
 get '/:short_url' do
-  @url = Url.where(short_url: params[:short_url])
+  @url = Url.find_by_short_url(params[:short_url])
+
+  # binding.pry
+  # @go_to_url = @url[original_url]
+  Url.increment_counter(:click_count, @url.id)
+  # redirect to "#{@url.original_url}"
+  redirect @url.original_url
 end
 
 # get '/urls'

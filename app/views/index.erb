@@ -15,7 +15,7 @@
 
   <ul>
     <%Url.all.each do |url|%>
-      <li><a href="<%=url.original_url%>">/<%=url.short_url%></a></li>
+      <li><a href="<%=url.short_url%>">/<%=url.short_url%></a> Click Count: <%=url.click_count%> </li>
     <%end%>
   </ul>
 
