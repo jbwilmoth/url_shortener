@@ -6,9 +6,15 @@
 
   <form id="create_url" action="/urls" method="POST">
     <label for="plain_url">Enter Url: </label>
-    <input type="text" name="url[original_url]" id="plain_url">
+    <input type="text" name="original_url" id="plain_url">
     <input type="submit" value="Create Url">
   </form>
+
+  <ul>
+    <%Url.all.each do |url|%>
+      <li><a href="<%=url.original_url%>">/<%=url.short_url%></a></li>
+    <%end%>
+  </ul>
 
 
 </div>
