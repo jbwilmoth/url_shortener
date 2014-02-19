@@ -18,9 +18,9 @@ end
 # end
 
 post '/urls' do
-  binding.pry
-  short_url = ("a".."z").to_a.sample(4).join("")
-  @new_url = Url.create(original_url: params[:original_url], short_url: short_url)
+  # binding.pry
+  # short_url = ("a".."z").to_a.sample(4).join("")
+  @new_url = Url.create(original_url: params[:original_url])
   # binding.pry
   erb :display_short
 end
