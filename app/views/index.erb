@@ -2,12 +2,13 @@
   <h1>Welcome to Jamica, mon!</h1>
   <h2>Make a shortened url</h2><br>
 
-  @short
+
 
   <form id="create_url" action="/urls" method="POST">
     <label for="plain_url">Enter Url: </label>
     <input type="text" name="url[original_url]" id="plain_url">
-    <input style="display: none" name="url[short_url]" value="<%@short%>">
     <input type="submit" value="Create Url">
   </form>
+
+  <h3>Your shortened url is: <a href=""></h3>
 </div>

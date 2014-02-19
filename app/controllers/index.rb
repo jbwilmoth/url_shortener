@@ -4,13 +4,15 @@ get '/' do
 end
 
 post '/urls' do
-  # create a new Url
-  url[:short_url] = ("a".."z").to_a.sample(4).join("")
-  Url.create(params[:url])
-  erb :index
+  params[:short_url] = ("a".."z").to_a.sample(4).join("")
+  @new_url = Url.create(params[:url])
+  # redirect to '/'
+  erb :display_short
 end
 
 # e.g., /q6bda
 get '/:short_url' do
   # redirect to appropriate "long" URL
+  @original_url = Url.where(short_url: params[:short_url])
+  erb
 end
