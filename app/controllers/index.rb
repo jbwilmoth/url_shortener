@@ -5,7 +5,7 @@ end
 
 post '/urls' do
   # create a new Url
-  url[:short_url] =
+  url[:short_url] = ("a".."z").to_a.sample(4).join("")
   Url.create(params[:url])
   erb :index
 end
