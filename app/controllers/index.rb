@@ -1,10 +1,11 @@
 get '/' do
   # let user create new short URL, display a list of shortened URLs
-  erb
+  erb :index
 end
 
 post '/urls' do
   # create a new Url
+  Url.create(params[:url])
 end
 
 # e.g., /q6bda
